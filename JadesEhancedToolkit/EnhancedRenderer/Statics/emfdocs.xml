@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<extradoc>
+  <class name="EnhancedMaterialFactory">
+    <summary>
+      Class dedicated to handling processing and data storage / retrieval.
+    </summary>
+  </class>
+  <member name="M:EnhancedMaterialFactory.Initialize">
+    <summary>
+      Initializes the Material Factory.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.Clear">
+    <summary>
+      Clears the Material Factory and all of its data.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.LoadExposedShaderProperties">
+    <summary>
+      Finds and saves all of the exposed Material properties into the Material Factory.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.TryGetPropertyID(System.String,System.Int32)">
+    <summary>
+      Attempts to locate a Shader Property ID correlating to the String key.
+    </summary>
+    <param name="key">
+      The search key.
+    </param>
+    <param name="ID">
+      The property ID. Will return -1 if not found.
+    </param>
+    <returns>
+      Returns a Boolean and Int32 Value.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.GetPropertyID(System.String)">
+    <summary>
+      Returns a Shader Property ID correlated to the string key.
+    </summary>
+    <param name="key">
+      The search key.
+    </param>
+    <returns>
+      Returns an Int32 Value.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.GetPropertyIDS">
+    <summary>
+      Get all Exposed Property ID's within every Material in the project.
+      <para/>
+      This generates a new array, as such it isnt entirely efficient so use at your own risk.
+    </summary>
+    <returns>
+      Returns an Int32 Array.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.GetPropertyNames">
+    <summary>
+      Get all Exposed Property Names within every Material in the project.
+      <para/>
+      This generates a new array, as such it isnt entirely efficient so use at your own risk.
+    </summary>
+    <returns>
+      Returns an System.String Array.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.HasStaticMaterial(System.String)">
+    <summary>
+      Checks whether the Factory contains an instance of the Static Material with the specified name.
+      <para/>
+      This will only be useful if you generate Materials outside of the Factory.
+    </summary>
+    <param name="key">
+      The search key.
+    </param>
+    <returns>
+      Returns an Boolean Value.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.FindStaticMaterial(UnityEngine.Material)">
+    <summary>
+      Checks whether the Factory contains an instance of the Static Material with the same name as the Material and returns it.
+      <para/>
+      This will likely be marked as Obsolete soon so don't rely on it too much.
+    </summary>
+    <param name="mat">
+      The Material which is used to find the instance.
+    </param>
+    <returns>
+      Returns an Instance of the Asset Material with the corresponding name.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.FindStaticMaterial(System.String)">
+    <summary>
+      Checks whether the Factory contains an instance of the Static Material using the specified key.
+    </summary>
+    <param name="key">
+      The key which is used to find the instance.
+    </param>
+    <returns>
+      Returns an Instance of the Asset Material with the corresponding name.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.FindMasterMaterial(System.String)">
+    <summary>
+      Checks whether the Factory contains an instance of the Master Material using the specified key.
+    </summary>
+    <param name="key">
+      The key which is used to find the instance.
+    </param>
+    <returns>
+      Returns the Instance of the Material with the corresponding name.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.GenerateInstanceMaterial(UnityEngine.Material)">
+    <summary>
+      Generates a new material instance. Currently just a dumb wrapper function.
+    </summary>
+    <param name="material">
+      The material to copy.
+    </param>
+  </member>
+  <member name="M:EnhancedMaterialFactory.GenerateMasterMaterial(UnityEngine.Material,System.String)">
+    <summary>
+      Generates a Master Material within the Factory which can be used as a static (shared) Material.
+    </summary>
+    <param name="material">
+      The Material to create an instance of.
+    </param>
+    <param name="key">
+      The key which is used to find the instance.
+    </param>
+    <returns>
+      Returns an Instance of the Material specified.
+    </returns>
+  </member>
+  <member name="M:EnhancedMaterialFactory.CleanupInstances">
+    <summary>
+      This will clear any and all references to Instance and Instanced Asset Materials held within the Material Factory.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.LoadMaterials">
+    <summary>
+      This will load all the Materials in the project (Including Unity defaults) into a Scriptable Object which will be used by the Material Factory.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.LoadDefaultsToContainer">
+    <summary>
+      This will load all the Primitive Unity Materials into the MaterialContainer.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.LoadDefaultUnityMaterials">
+    <summary>
+      This Initializes and loads all of the Primitive Unity Materials into the Unity Default Materials Dictionary.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.GenerateAssetPath">
+    <summary>
+      Generates the Asset Path to store the Materials Container.
+    </summary>
+  </member>
+  <member name="M:EnhancedMaterialFactory.CreateAsset(System.String)">
+    <summary>
+      Creates an asset of type T.
+    </summary>
+    <remarks>
+      T must derive from type Scriptable Object.
+    </remarks>
+  </member>
+  <member name="M:EnhancedMaterialFactory.GetCurrentRenderPipelineInUse">
+    <summary>
+      Gets the current render pipeline, this operation is insanely terrible for so many reasons so do not call it unless absolutely needed.
+    </summary>
+    <returns>
+      RenderPipelineType
+    </returns>
+  </member>
+</extradoc>

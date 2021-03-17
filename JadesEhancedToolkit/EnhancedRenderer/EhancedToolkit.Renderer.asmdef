@@ -1,0 +1,15 @@
+{
+    "name": "EhancedToolkit.Renderer",
+    "references": [
+        "GUID:911e360eac9c86e46899ef521548bc36"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
